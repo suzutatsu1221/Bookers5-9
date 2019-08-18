@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Bookers59</title>
+    <title>Bookers</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,20 @@
   </head>
 
   <body>
+
+    <header id="header" class="header">
+      <div class="header-container">
+        <nav class="header-left">Bookers</nav>
+        <nav class="header-right">
+          <ul>
+            <li><%= link_to "Home", "/"  %></li>
+            <li><%= link_to "About",     %></li>
+            <li><%= link_to "sing up".   %></li>
+            <li><%= link_to "login",     %></li>
+          </ul>
+        </nav>
+      </div>
+    </header><!-- /header -->
     <%= yield %>
   </body>
 </html>
