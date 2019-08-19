@@ -10,16 +10,25 @@ end
 def create
 	book = Book.new(book_params)
 	book.save
-	redirect_to book_path
+	
 end
 
 def index
+	@user = User.all(params[:id])
 end
 
 def show
+	@book = Book.find(params[:id])
 end
 
 def edit
+	@book = Book.find(params[:id])
+end
+
+def update
+	book = Book.find(params[:id])
+	book.update(blog_params)
+
 end
 
 private

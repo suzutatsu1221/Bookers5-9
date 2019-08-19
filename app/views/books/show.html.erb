@@ -1,8 +1,7 @@
+<p id="notice"></p>
 
 
-
-
-	<div clas="container">
+<div clas="container">
 		<div class="row">
 			<div class="col-xs-3">
 				<h3>User info</h3>
@@ -34,21 +33,4 @@
 				<!--form_for終わり -->
 			</div>
 		</div>
-		<div class="col-xs-9">
-			<h3>Books</h3>
-			<table>
-				<thead>
-					<tr>
-						<th>Title</th>
-						<th>Opinion</th>
-					</tr>
-					<% @books.each do |book| %>
-                    <tr>
-                      <td><%= book.title %></td>
-                      <td><%= book.body %></td>
-                    </tr>
-   n            <% end %>
-				</thead>
-			</table>
-		</div>
-	</div>
+		<div class="col-xs-9"></div>
