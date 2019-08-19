@@ -1,0 +1,54 @@
+
+<p id="notice"></p>
+
+
+	<div clas="container">
+		<div class="row">
+			<div class="col-xs-3">
+				<h3>User info</h3>
+				<table>
+					<tbody>
+						<tr>
+							<td>name</td>
+							<td><%= @user.name %></td>
+						</tr>
+						<tr>
+							<td>introduction</td>
+							<td><%= @user.introduction %></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="col-xs-3">
+				<h3>New book</h3>
+				<!-- form_for部分 -->
+				<%= form_for(@book) do |f| %>
+                  <h4>Title</h4>
+                  <%= f.text_field :title %>
+
+                  <h4>Opinion</h4>
+                  <%= f.text_area :body %>
+
+                  <%= f.submit 'Create Book'%>
+                  <% end %>
+				<!--form_for終わり -->
+			</div>
+		</div>
+		<div class="col-xs-9">
+			<h3>Books</h3>
+			<table>
+				<thead>
+					<tr>
+						<th>Title</th>
+						<th>Opinion</th>
+					</tr>
+					<% @books.each do |book| %>
+                    <tr>
+                      <td><%= book.title %></td>
+                      <td><%= book.body %></td>
+                    </tr>
+   n            <% end %>
+				</thead>
+			</table>
+		</div>
+	</div>

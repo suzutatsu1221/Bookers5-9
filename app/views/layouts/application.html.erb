@@ -14,12 +14,19 @@
     <header id="header" class="header">
       <div class="header-container">
         <nav class="header-left">Bookers</nav>
+        <% if  user_signed_in? %>
         <nav class="header-right">
           <ul>
-            <li><%= link_to "Home", "/"  %></li>
-            <li><%= link_to "About",     %></li>
-            <li><%= link_to "sing up".   %></li>
-            <li><%= link_to "login",     %></li>
+            <li><%= link_to "Home", user_path(current_user.id) %> </li>
+            <li><%= link_to "Users", %></li>
+            <li><%= link_to "Books", %>/li>
+            <li><%= link_to "logout", destroy_user\session_path %></li>
+        <% else %>
+            <li><%= link_to "Home", "/" %></li>
+            <li><%= link_to "About", %></li>
+            <li><%= link_to "sign up", new_user_registration_path %></li>
+            <li><%= link_to "login",new_user_session_path %></li>
+        <% end %>
           </ul>
         </nav>
       </div>
