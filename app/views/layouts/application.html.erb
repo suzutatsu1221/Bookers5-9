@@ -9,8 +9,10 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-  <ul>
-    <% if  user_signed_in? %>
+  <header>
+    <p>Bookers</p>
+    <ul>
+        <% if  user_signed_in? %>
             <li><%= link_to "Home", user_path(current_user.id) %> </li>
             <li><%= link_to "Users", "#" %></li>
             <li><%= link_to "Books", "#" %></li>
@@ -20,8 +22,9 @@
             <li><%= link_to "About", "#" %></li>
             <li><%= link_to "sign up", new_user_registration_path %></li>
             <li><%= link_to "login",new_user_session_path  %></li>
-    <% end %>
-  </ul>
+        <% end %>
+    </ul>
+</header>
     <%= yield %>
   </body>
 </html>  

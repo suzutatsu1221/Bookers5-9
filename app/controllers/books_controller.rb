@@ -6,7 +6,8 @@ end
 
 def create
 	@book = Book.new
-	Book.save
+	@book.save
+	redirect_to "#"
 end
 
 def show
