@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
+  <head class="clearfix">
     <title>Bookers</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,20 +10,28 @@
   </head>
   <body>
   <header>
-    <p>Bookers</p>
-    <ul>
-        <% if  user_signed_in? %>
-            <li><%= link_to "Home", user_path(current_user.id) %> </li>
-            <li><%= link_to "Users", "#" %></li>
-            <li><%= link_to "Books", "#" %></li>
-            <li><%= link_to "logout", destroy_user_session_path ,method: :delete %></li>
-        <% else %>
-            <li><%= link_to "Home", "/" %></li>
-            <li><%= link_to "About", "#" %></li>
-            <li><%= link_to "sign up", new_user_registration_path %></li>
-            <li><%= link_to "login",new_user_session_path  %></li>
-        <% end %>
-    </ul>
+    <nav class="navbar navbar-inverse ">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <p class="navbar-text">Bookers</p>
+        </div>
+        <div class="collapse navbar-collapse">
+           <ul class="nav navbar-nav navbar-right">
+            <% if  user_signed_in? %>
+              <li><a class="glyphicon glyphicon-home home" href="/">Home</a></li>
+              <li><a class="glyphicon glyphicon-user" aria-hidden="true" href="#">Users</a></li>
+              <li><a class="glyphicon glyphicon-book" aria-hidden="true" href="#">Books</a></li>
+              <li><a class="glyphicon glyphicon-log-out" aria-hidden="true" href ="/users/sign_out" data-method="delete">logout</a></li>
+            <% else %>
+              <li><a class="glyphicon glyphicon-home" aria-hidden="true" href="/">Home</a></li>
+              <li><a class="glyphicon glyphicon-link" aria-hidden="true" href="/homes">About</a></li>
+              <li><a class="glyphicon glyphicon-edit" aria-hidden="true" href="/users/sign_up">Sign up</a></li>
+              <li><a class="glyphicon glyphicon-log-in" aria-hidden="true" href="/users/sign_in">login</a></li>
+            <% end %>
+            </ul>
+        </div>
+      </div>
+    </nav>
 </header>
     <%= yield %>
   </body>
