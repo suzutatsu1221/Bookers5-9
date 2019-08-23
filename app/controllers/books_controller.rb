@@ -15,7 +15,11 @@ def show
 	@books = Book.all
 end
 
-def edit
+def index
+	 @user = User.find(params[:id])
+	 @books = Book.all
+
+
 end
 
 def update
