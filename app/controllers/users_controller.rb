@@ -6,8 +6,14 @@ end
   @books = Book.all
   @book = Book.new
 end
+
+def create
+end
+
 def index
+	# @user = User.find(params[:id])
 	@users = User.all
+	@book = Book.new
 end
 def edit
   	@user = User.find(params[:id])
